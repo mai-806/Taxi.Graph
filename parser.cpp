@@ -20,8 +20,6 @@ public:
 };
 
 int main() {
-    std::string path = "pugixml-1.13/docs/samples/tree.xml";
-
     pugi::xml_document doc;
     pugi::xml_parse_result result = doc.load_file("map.xml");
 
