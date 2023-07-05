@@ -80,7 +80,7 @@ float getRushHourCoefficient()
             coefficient = 1.15;
     }
     else if (hour >= 23 || hour == 0){
-        coefficient = 1.3;
+        coefficient = 1.25;
     }
 
     return coefficient;
