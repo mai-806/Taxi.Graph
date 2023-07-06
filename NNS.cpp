@@ -30,28 +30,3 @@ size_t NNS(std::vector<std::pair<double, double>>& nodes, std::pair<double, doub
     }
     return min_idx;
 }
-
-int main() {
-    std::ifstream map;
-    map.open("map.pycgr");
-    std::string line;
-    int node_count;
-    std::vector<std::pair<double, double>> nodes;
-    long double lat, lon, x;
-    if (map.is_open()) {
-        do {
-            std::getline(map, line);
-        } while (line[0] == '#');
-        node_count = std::stoi(line);
-        std::getline(map, line);
-        for (int i = 0; i < node_count; ++i) {
-            map >> x >> lat >> lon;
-            nodes.push_back({lat, lon});
-        }
-    }
-    map.close();
-
-    std::cout << std::setprecision(7) << std::fixed;
-    std::cout << get_distance(nodes[427], nodes[426]) << std::endl;
-    std::cout << NNS(nodes, nodes[426], 426) << std::endl;
-}
