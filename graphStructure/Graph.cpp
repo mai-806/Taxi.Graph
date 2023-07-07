@@ -20,14 +20,13 @@ void Graph::fillingGraph(const std::string &file)
             std::getline(readFile, line);
             std::stringstream ss(line);
             ss >> whereFrom >> elem.numberOfNode >> elem.distance >> elem.maxSpeed >> elem.traffic >> directionOfMovement;
-            if(directionOfMovement) {
-                graph[whereFrom].push_front(elem);
+            graph[whereFrom].push_front(elem);
+            if (directionOfMovement)
+            {
                 size_t tempNumberOfNode = elem.numberOfNode;
                 elem.numberOfNode = whereFrom;
                 graph[tempNumberOfNode].push_front(elem);
-                continue;
             }
-            graph[whereFrom].push_front(elem);
         }
 
         readFile.close();
