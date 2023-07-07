@@ -6,23 +6,22 @@
 #include <sstream>
 #include <forward_list>
 
-class ElemOfVector
-{
+class Edge{
 private:
     size_t numberOfNode;
-    long double distance;
+    double distance;
     int maxSpeed;
     int traffic;
 public:
-    ElemOfVector() = default;
-    ~ElemOfVector() = default;
+    Edge() = default;
+    ~Edge() = default;
     friend class Graph;
 };
 
 class Graph
 {
 public:
-    std::vector<std::forward_list<ElemOfVector>> graph;
+    std::vector<std::forward_list<Edge>> graph;
 public:
     Graph() = default;
     ~Graph() = default;
