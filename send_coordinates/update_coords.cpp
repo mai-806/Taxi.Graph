@@ -1,12 +1,9 @@
-#include <iostream>
-#include <unistd.h>
-#include <vector>
+// #include <iostream>
+// #include <unistd.h>
+// #include <vector>
 
-using namespace std;
+// using namespace std;
 
-
-
-// delay(5000); 
 
 
 void GettingCurrentCoordinates(vector<pair <int, int>>& node, vector<double>& times)
@@ -33,12 +30,12 @@ void GettingCurrentCoordinates(vector<pair <int, int>>& node, vector<double>& ti
 
 
 
-int main()
-{
-    vector<pair <int, int>> a = {{1, 1}, {2, 2}, {5, 5}, {4, 4}, {3, 3}, {2, 2}, {7, 7}};
-    vector<double> b = {118.2, 122, 131.22, 153, 142.2, 131.1};
-    GettingCurrentCoordinates(a, b);
+// int main()
+// {
+//     vector<pair <int, int>> a = {{1, 1}, {2, 2}, {5, 5}, {4, 4}, {3, 3}, {2, 2}, {7, 7}};
+//     vector<double> b = {118.2, 122, 131.22, 153, 142.2, 131.1};
+//     GettingCurrentCoordinates(a, b);
 
-    return 0;
-}
+//     return 0;
+// }
  
