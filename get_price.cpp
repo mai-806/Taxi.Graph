@@ -1,7 +1,6 @@
 // #include <iostream>
-#include <ctime>
+// #include <ctime>
 
-// using namespace std;
 
 //Константы цен за минуту и за километр!
 // int price_km = 13;
@@ -102,6 +101,6 @@ float pricing(int minutes_to_client, int km_to_client, int minutes_to_destinatio
 // int main(){
 //     int price_km = 13;
 //     int price_minute = 11;
-//     cout<<pricing(5, 3, 30, 20, price_minute, price_km);
+//     std::cout<<pricing(5, 3, 30, 20, price_minute, price_km);
 // }
 
