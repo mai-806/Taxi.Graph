@@ -1,19 +1,13 @@
-
 // #include <iostream>
 // #include <unistd.h>
 // #include <vector>
-
-
-
-
-// delay(5000); 
 
 
 void GettingCurrentCoordinates(std::vector<std::pair <double, double>>& node, std::vector<double>& times)
 {
     std::vector<double> sum_time(1);
     sum_time[0] = 0;
-    for (int i = 0; i < times.size(); i++){
+    for (int i = 0; i < times.size(); ++i){
         sum_time.push_back(sum_time[i] + times[i]); // массив сумарного времени до каждой ноды
     }
     double current_time = 0;
@@ -23,11 +17,11 @@ void GettingCurrentCoordinates(std::vector<std::pair <double, double>>& node, st
             //http запрос, отправляющий текущуюю координату в фронт (return node[i])
             std::cout << node[i].first<<" "<<node[i].second<< '\n';
             i += 1;
+            if (i == sum_time.size())
+            return void();
         }
         sleep(60);
         current_time += 60;
-        if (i == sum_time.size())
-            return void();
     }
 }
 
