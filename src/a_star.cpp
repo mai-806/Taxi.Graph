@@ -12,7 +12,8 @@ double a_star(const Graph& g,
         const std::vector<std::pair<double, double>>& coords,
         size_t start,
         size_t end,
-        std::vector<size_t>& path) {
+        std::vector<size_t>& path,
+        std::vector<double>& times) {
     // Returns travel time, saves path in vector
 
     std::vector<bool> closed_list(coords.size(), false);
@@ -26,13 +27,16 @@ double a_star(const Graph& g,
         open_list.erase(open_list.begin());
         closed_list[p.second] = true;
         path.push_back(p.second);
-        total_time += p.first - get_distance(coords[p.second], coords[end]) / 50;
+        if (p.second != start) {
+            total_time += p.first - get_distance(coords[p.second], coords[end]) / 50;
+        }
+        times.push_back(total_time*3.6);
 
         for (auto succ : g.graph[p.second]) {
             if (succ.get_node() == end) {
                 // Found end node
                 path.push_back(p.second);
-                return total_time;
+                return total_time * 3.6;
             }
             else if (closed_list[succ.get_node()] == false) {
                 double G = succ.get_distance() / (succ.get_speed() * (1 - 0.08 * succ.get_traffic()));
