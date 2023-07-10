@@ -6,7 +6,8 @@
 #include <sstream>
 #include <forward_list>
 
-class Edge{
+class Edge {
+    friend class Graph;
 private:
     size_t numberOfNode;
     double distance;
@@ -15,17 +16,20 @@ private:
 public:
     Edge() = default;
     ~Edge() = default;
-    friend class Graph;
+
+    size_t get_node();
+    double get_distance();
+    int get_speed();
+    int get_traffic();
 };
 
-class Graph
-{
+class Graph {
 public:
     std::vector<std::forward_list<Edge>> graph;
-public:
     Graph() = default;
     ~Graph() = default;
     void fillingGraph(const std::string &file);
+
 };
 
 #include "../src/Graph.cpp"
