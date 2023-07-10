@@ -26,7 +26,6 @@ public:
 class Graph {
 public:
     std::vector<std::forward_list<Edge>> graph;
-public:
     Graph() = default;
     ~Graph() = default;
     void fillingGraph(const std::string &file);
