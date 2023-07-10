@@ -1,5 +1,21 @@
 #include "../include/Graph.hpp"
 
+size_t Edge::get_node() {
+    return this->numberOfNode;
+}
+
+double Edge::get_distance() {
+    return this->distance;
+}
+
+int Edge::get_speed() {
+    return this->maxSpeed;
+}
+
+int Edge::get_traffic() {
+    return this->traffic;
+}
+
 void Graph::fillingGraph(const std::string &file)
 {
     std::ifstream readFile(file);
