@@ -8,11 +8,12 @@
 #include <set>
 #include <float.h>
 
-double a_star(const std::string& edges_file, const std::string& vertexes_file, size_t start, size_t end, std::vector<size_t>& path) {
+double a_star(const Graph& g,
+        const std::vector<std::pair<double, double>>& coords,
+        size_t start,
+        size_t end,
+        std::vector<size_t>& path) {
     // Returns travel time, saves path in vector
-    Graph g;
-    g.fillingGraph(edges_file);
-    std::vector<std::pair<double, double>> coords = fillingCoord(vertexes_file);
 
     std::vector<bool> closed_list(coords.size(), false);
     std::set<std::pair<double, size_t>> open_list;
@@ -48,4 +49,4 @@ double a_star(const std::string& edges_file, const std::string& vertexes_file, s
     
     std::cout << "Not found\n";
     return -1;
-
+}
